@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const googlebooks = new Schema({
+const googlebooksSchema = new Schema({
     title: {
         type: String,
         required: true
@@ -18,5 +18,8 @@ const googlebooks = new Schema({
     link: {
         type: String
     }
-
 })
+
+const googlebooks = mongoose.model('googlebooks', googlebooksSchema)
+
+module.exports = googlebooks;
